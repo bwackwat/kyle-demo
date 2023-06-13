@@ -1,0 +1,16 @@
+version: "3.9"
+
+networks:
+  demo_network:
+    driver: bridge
+    name: demo_network
+
+services:
+
+  demo:
+    container_name: kyle-demo
+    build:
+      context: ./
+      dockerfile: ./dockerfile
+    networks:
+      - demo_network
