@@ -12,5 +12,17 @@ services:
     build:
       context: ./
       dockerfile: ./dockerfile
+    image: default-kyle-demo
+    networks:
+      - demo_network
+
+  webserver:
+    container_name: webserver
+    build:
+      context: ./
+      dockerfile: ./dockerfile-webserver
+    image: default-webserver
+    ports:
+      - 9000:9000
     networks:
       - demo_network
